@@ -11,8 +11,8 @@ import '../utils/snack_bar.dart';
 class ReelController extends GetxController {
   final Rx<List<Reel>> _reelList = Rx<List<Reel>>([]);
 
-
   List<Reel> get reelList => _reelList.value;
+
   @override
   void onInit() {
     _reelList.bindStream(firestore

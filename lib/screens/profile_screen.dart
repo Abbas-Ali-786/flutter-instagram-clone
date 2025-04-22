@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:instagram_clone/constants/firebase_consts.dart';
 import 'package:instagram_clone/constants/firestore_consts.dart';
 import 'package:instagram_clone/controllers/auth_controller.dart';
-import 'package:instagram_clone/controllers/user_controlller.dart';
+import 'package:instagram_clone/controllers/user_controller.dart';
 import 'package:instagram_clone/utils/snack_bar.dart';
 import 'package:instagram_clone/widgets/follow_button.dart';
 
@@ -38,8 +38,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
       isLoading = true;
     });
     try {
-      userData =
-          await firestore.collection(FirestoreConstants.usersCollection).doc(widget.uid).get();
+      userData = await firestore
+          .collection(FirestoreConstants.usersCollection)
+          .doc(widget.uid)
+          .get();
 
       QuerySnapshot postSnap = await firestore
           .collection(FirestoreConstants.postsCollection)
@@ -205,7 +207,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Center(
-                        child: CircularProgressIndicator(strokeWidth: 2.5,),
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2.5,
+                        ),
                       );
                     }
 

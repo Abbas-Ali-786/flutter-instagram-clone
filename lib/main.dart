@@ -13,7 +13,8 @@ import 'screens/login_screen.dart';
 Future<void> _handleBackgroundNotification(RemoteMessage message) async {
   print('Handling Background');
 }
-NotificationServices notificationServices=NotificationServices();
+
+NotificationServices notificationServices = NotificationServices();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 

@@ -3,8 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:instagram_clone/constants/firebase_consts.dart';
 import 'package:instagram_clone/constants/firestore_consts.dart';
-import 'package:instagram_clone/controllers/reel_controll.dart';
-import 'package:instagram_clone/controllers/user_controlller.dart';
+import 'package:instagram_clone/controllers/reel_controller.dart';
+import 'package:instagram_clone/controllers/user_controller.dart';
 import 'package:instagram_clone/screens/comment_screen.dart';
 import 'package:instagram_clone/screens/profile_screen.dart';
 import 'package:instagram_clone/widgets/video_item.dart';
@@ -201,9 +201,7 @@ class _ReelScreenState extends State<ReelScreen> {
   }
 
   Widget _buildColumn(
-      {required Widget icon,
-      required String title,
-      Function()? onTap}) {
+      {required Widget icon, required String title, Function()? onTap}) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12),
       child: Column(
